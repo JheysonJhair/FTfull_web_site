@@ -1,12 +1,56 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Home.css";
-import Perfil from '../../assets/webp/perfil.webp';
+import Perfil from "../../assets/webp/perfil.webp";
+
 function Home() {
+  const [text, setText] = useState("");
+  const originalText = "Programador y diseñador Fullstack Web Developer";
+
+  useEffect(() => {
+    let currentIndex = 0;
+    let intervalId;
+
+    const typeText = () => {
+      intervalId = setInterval(() => {
+        if (currentIndex <= originalText.length) {
+          setText(originalText.substring(0, currentIndex));
+          currentIndex++;
+        } else {
+          clearInterval(intervalId);
+          setTimeout(() => {
+            setText("");
+            currentIndex = 0;
+            typeText();
+          }, 6000);
+        }
+      }, 100);
+    };
+
+    typeText();
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
+  const scrollToPortfolio = () => {
+    const portfolioSection = document.getElementById("portafolios");
+    if (portfolioSection) {
+      const offset = 84;
+      const targetPosition = portfolioSection.offsetTop - offset;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+  
   return (
     <>
       <div class="left__content container">
         <section
-          id="home"
+          id="inicio"
           class="div_2 home__page flex align-items-center justify-content-center xl\:justify-content-between grid grid-nogutter gap-4"
         >
           <div class="divv col-12 xl:col-6">
@@ -20,8 +64,8 @@ function Home() {
                 <h1 class="h11 text-3xl sm:text-5xl md:text-7xl">
                   Mr. Jheyson Jhair
                 </h1>
-                <p id="typing-text" class="txt p1">
-                  Programador y diseñador Fullstack Web Developer
+                <p id="typing-text" className="txt p1">
+                  {text}
                   <span>&#160;</span>
                 </p>
               </div>
@@ -37,7 +81,7 @@ function Home() {
                 Descargar CV
               </a>
               <button
-                id="mitrabajo"
+                onClick={scrollToPortfolio}
                 aria-label="Deslizar a sección portafolio para mostrar mis trabajos"
                 class="mess cursor-pointer"
               >

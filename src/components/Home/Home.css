@@ -73,9 +73,14 @@
   /*contenedor botones home*/
   .home__buttons button {
     font-family: var(--font_title1);
+    margin-left: 3px;
     padding: 1rem 2rem;
     color: var(--color_font_title);
   }
+    /* Enlaces*/
+    .btn-header.active {
+      color: #38b29c ;
+    }
   /*enlaces botones*/
   .home__buttons a {
     background-color: var(--secondary-bg-color);

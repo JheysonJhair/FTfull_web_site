@@ -8,7 +8,7 @@
     padding: 50px 20px;
   }
   /*subtitle*/
-  .galery h3 {
+  .galery h2 {
     font-family: var(--font_title1);
     font-size: var(--size_titulos);
   }

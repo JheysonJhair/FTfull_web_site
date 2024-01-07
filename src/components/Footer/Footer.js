@@ -2,10 +2,22 @@ import React from "react";
 import './Footer.css';
 
 function Footer() {
+  const scrooInit = () => {
+    const portfolioSection = document.getElementById("inicio");
+    if (portfolioSection) {
+      const offset = 84;
+      const targetPosition = portfolioSection.offsetTop - offset;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <>
       <footer>
-        <a href="#inicio" className="arriba btn-header" id="enlace-arriba" >
+        <a onClick={scrooInit} className="arriba btn-header" id="enlace-arriba" >
           <i className="fa-solid fa-angles-up"></i>
         </a>
         <div className="redes">

@@ -69,6 +69,9 @@
     cursor: pointer;
   }
   /* Enlaces*/
+  .btn-header.active {
+    color: #38b29c ;
+  }
   
   /* Contenedor textos*/
   .textos {

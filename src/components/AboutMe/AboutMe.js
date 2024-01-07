@@ -1,9 +1,9 @@
 import React from "react";
 import './AboutMe.css';
+
 function AboutMe() {
   return (
-    <>
-        <section id="sobremi" className="sobremi">
+    <section id="sobremi" className="sobremi">
       <div className="contenido-seccion">
         <h2>Sobre Mí</h2>
         <p className="t2">
@@ -31,7 +31,11 @@ function AboutMe() {
               <li>
                 <i className="fa-solid fa-globe"></i>
                 <strong>WebSite</strong>
-                <a href="https://jheysonjhairpro.ccontrolz.com" target="_blank">
+                <a
+                  href="https://jheysonjhairpro.ccontrolz.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   jheysonjhairpro.ccontrolz.com
                 </a>
               </li>
@@ -90,6 +94,7 @@ function AboutMe() {
             href="./pdf/Currículum JheysonJhairAroneAngeles.pdf"
             aria-label="Descargar curriculum"
             download
+            rel="noopener noreferrer"
           >
             Descargar CV
           </a>
@@ -97,8 +102,7 @@ function AboutMe() {
           <span className="overlay"></span>
         </button>
       </div>
-      </section>
-    </>
+    </section>
   );
 }
 

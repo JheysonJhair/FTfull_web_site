@@ -5,7 +5,7 @@ function Portfolio() {
 <>
 <section className="w" id="portafolios">
       <section className="contenedor" id="trabajo">
-        <h3>Portafolio</h3>
+        <h2>Portafolio</h2>
         <p className="after">De algo simple algo extraordinario</p>
 
         <div className="botones-work">

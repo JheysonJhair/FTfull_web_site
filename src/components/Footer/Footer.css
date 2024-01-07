@@ -49,6 +49,9 @@ footer {
     font-size: 18px;
     scroll-behavior: smooth;
   }
+  .arriba:hover{
+    cursor: pointer;
+  }
   
   /*------------------------------------*/
   /* EXTRA */
