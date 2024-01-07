@@ -1,0 +1,156 @@
+/* ----------------------------------------------*/
+/*                 TRABAJO                    */
+/* ----------------------------------------------*/
+/*fondo trabajo*/
+.w {
+    background-color: #252a2e;
+    color: #fff;
+    padding: 50px 20px;
+  }
+  /*title*/
+  .w h3 {
+    font-family: var(--font_title1);
+    font-size: var(--size_titulos);
+  }
+  /*subtitle*/
+  .w p {
+    color: #1cb698;
+    font-family: var(--font_title1);
+    font-size: 22px;
+  }
+  /*fila botones*/
+  .botones-work {
+    overflow: hidden;
+    padding-bottom: 34px;
+    font-family: var(--font_title1);
+  }
+  /* Botones li*/
+  .botones-work li {
+    display: inline-block;
+    text-align: center;
+    margin-left: 8px;
+    font-size: 20px;
+    margin-bottom: var(--espacios-contenido);
+    padding: 6px 12px;
+    border: 1px solid var(--secondary-bg-color);
+    list-style: none;
+    color: var(--secondary-bg-color);
+  }
+  /* Botones li hover*/
+  .botones-work li:hover {
+    background: var(--secondary-bg-color);
+    color: #fff;
+    cursor: pointer;
+  }
+  /* Botones li active(una vez pulsado toma los atributos)*/
+  .botones-work .active {
+    background: var(--secondary-bg-color);
+    color: #fff;
+  }
+  /* Contenedor de imagenes*/
+  .galeria-work {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: initial;
+    gap: 20px;
+  }
+  /* Caja de imagenes y texto */
+  .cont-work {
+    width: 31%;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: var(--espacios-contenido);
+  }
+  .cont-work h4 {
+    font-family: var(--font_title1);
+    color: #ffffff8c;
+    font-size: 20px;
+  }
+  /* Caja de imagenes */
+  .img-work {
+    height: 90%;
+    width: 100%;
+    position: relative;
+    display: inline-block;
+  }
+  /* Imagenes */
+  .img-work img {
+    height: 100%;
+    width: 100%;
+    filter: brightness(0.7) blur(2px);
+    transition: filter 0.3s;
+    object-fit: cover;
+  }
+  .img-work img:hover {
+    filter: brightness(1) blur(2px);
+    cursor: pointer;
+  }
+  .img-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    font-family: var(--font_title1);
+    color: rgb(167, 185, 189);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    z-index: 0;
+  }
+  .img-caption {
+    cursor: pointer;
+  }
+  /* Texto */
+  .textos-work {
+    height: 10%;
+  }
+  /* Texto h4 */
+  .textos-work h4 {
+    line-height: 30px;
+    font-weight: 300;
+  }
+  
+  .link-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+    z-index: 1;
+  }
+  /* Estilos para el contenedor de aptitudes en el modal */
+  .modal-skills {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 20px;
+    z-index: 1;
+  }
+  
+  /* Estilos para los iconos de aptitudes */
+  .modal-skills div i {
+    color: #343541;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 33px;
+    height: 33px;
+  }
+  
+  .modal-skills div {
+    line-height: 70px;
+    color: #343541;
+    background-color: #fbfbfbc4;
+    padding: 3px;
+    border-radius: 50%;
+    font-size: 21px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 33px;
+    height: 33px;
+    margin-right: 10px;
+    font-weight: bold;
+  }

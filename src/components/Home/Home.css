@@ -1,0 +1,100 @@
+/* ----------------------------------------------*/
+/*                    HOME                     */
+/* ----------------------------------------------*/
+/*contenedor home*/
+.container {
+    background: linear-gradient(to top, rgb(30, 35, 38), rgba(30, 35, 38, 0.817)),
+      url(../../assets/webp/Font.webp);
+    background-size: cover;
+    padding: 0rem 7rem;
+  }
+  /*Tamaño img USUARIO*/
+  .right__content img {
+    height: 100%;
+    width: 100%;
+  }
+  /*posicion de pantalla completa*/
+  .home__page {
+    height: 98vh;
+    width: 100%;
+    position: relative;
+  }
+  /*fila de imagen y texto*/
+  .div_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /*subtitulo*/
+  .txt {
+    color: rgb(153, 151, 151);
+    margin-bottom: 30px;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  /*tamaño imagen*/
+  .imgg {
+    width: 480px;
+    height: 480px;
+    overflow: hidden;
+    margin-left: 70px;
+  }
+  /*imagen usuario*/
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /*mensaje HOLA YO SOY*/
+  .message__bubble {
+    background-color: #166d9f;
+    display: inline-block;
+    position: relative;
+    width: 180px;
+    height: auto;
+    background-color: var(--secondary-bg-color);
+  }
+  /*triangulo*/
+  .triangle:after {
+    content: "";
+    position: absolute;
+    left: 40%;
+    border: 15px solid;
+    border-color: var(--secondary-bg-color) transparent transparent transparent;
+  }
+  /*texto mensaje*/
+  .message__text {
+    padding: 1rem;
+    font-size: 20px;
+    text-align: center;
+    font-family: var(--font_title1);
+  }
+  
+  /*contenedor botones home*/
+  .home__buttons button {
+    font-family: var(--font_title1);
+    padding: 1rem 2rem;
+    color: var(--color_font_title);
+  }
+  /*enlaces botones*/
+  .home__buttons a {
+    background-color: var(--secondary-bg-color);
+    font-family: var(--font_title1);
+    font-size: 18px;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+  }
+  .cursor-pointer {
+    font-family: var(--font_title1);
+    cursor: pointer;
+  }
+  /*boton mi trabajo*/
+  .home__buttons button {
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-width: thin;
+    font-size: 0.9rem;
+    color: #fff;
+    padding: 1rem 1.5rem;
+  }

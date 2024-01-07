@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*Cuerpo*/
+body {
+  color: #ffffffbc;
+  font-family: var(--font_a);
+  color: var(--color_font_title);
+  height: 200px;
+  max-width: 100vw;
+  z-index: -1;
+}
+/* Contenedor Galeria y trabajo */
+.contenedor {
+  margin: auto;
+  width: 95%;
+  max-width: 1200px;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Textos p de WORK y GALERY */
+.contenedor p {
+  font-size: var(--parrafos);
+  font-weight: 300;
+  color: var(--secondary-bg-color);
+}
+/* Crea una caja en la clase after(LA LINEA DE CADA H3)*/
+.after::after {
+  content: "";
+  display: block;
+  margin: auto;
+  margin-top: var(--espacios_title_h2);
+  width: 130px;
+  height: 2px;
+  background: var(--secondary-bg-color);
+  margin-bottom: var(--espacios-contenido_line);
+}
+
+/*Title*/
+h1 {
+  float: left;
+  position: relative;
+  font-size: 80px;
+}

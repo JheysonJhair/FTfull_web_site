@@ -1,0 +1,250 @@
+/* ----------------------------------------------*/
+/*                 SKILLS                      */
+/* ----------------------------------------------*/
+/*FONDO skills*/
+.skills {
+    background-color: #252a2e;
+    color: #fff;
+    padding: 50px 20px;
+  }
+  /*contenedor skills*/
+  .skills .contenido-seccion {
+    max-width: 1100px;
+    margin: auto;
+  }
+  /*title*/
+  .skills h2 {
+    font-size: var(--size_titulos);
+    font-family: var(--font_title1);
+    text-align: center;
+    padding: 20px 0;
+  }
+  /*fila*/
+  .skills .fila {
+    display: flex;
+  }
+  /*columnas*/
+  .skills .fila .col {
+    width: 50%;
+    padding: 0 20px;
+  }
+  /*subtitle*/
+  .skills .fila .col h3 {
+    font-size: var(--size_titulos);
+    font-family: var(--font_title1);
+    margin-bottom: 25px;
+  }
+  /*titulos negrita*/
+  .skills .skill > span {
+    font-family: "Righteous";
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #f2f2f2e3;
+  }
+  /*barra*/
+  .skills .skill .barra-skill {
+    height: 8px;
+    width: 80%;
+    background-color: #131517;
+    position: relative;
+    margin-bottom: 30px;
+  }
+  /*progreso*/
+  .skills .skill .progreso {
+    background-color: #1cb698;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 8px;
+  }
+  /*span sirculo*/
+  .skills .skill .barra-skill span {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background-color: #1cb698;
+    border-radius: 50px;
+    line-height: 40px;
+    text-align: center;
+    top: -17px;
+    right: -15px;
+    font-size: 14px;
+  }
+  .cv a {
+    font-weight: 300;
+    font-family: var(--font_title1);
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    color: #ffffff;
+  }
+  /*clases en javascript */
+  .skills .skill .java {
+    width: 0%;
+    animation: 2s java forwards;
+  }
+  @keyframes java {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 85%;
+    }
+  }
+  /**/
+  .skills .skill .javascript {
+    width: 0%;
+    animation: 2s javascript forwards;
+  }
+  @keyframes javascript {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 75%;
+    }
+  }
+  /**/
+  .skills .skill .typescript {
+    width: 0%;
+    animation: 2s typescript forwards;
+  }
+  @keyframes typescript {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 85%;
+    }
+  }
+  /**/
+  .skills .skill .htmlcss {
+    width: 0%;
+    animation: 2s htmlcss forwards;
+  }
+  @keyframes htmlcss {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 92%;
+    }
+  }
+  /**/
+  .skills .skill .photoshop {
+    width: 0%;
+    animation: 2s photoshop forwards;
+  }
+  @keyframes photoshop {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 75%;
+    }
+  }
+  /**/
+  .skills .skill .wordpress {
+    width: 0%;
+    animation: 2s wordpress forwards;
+  }
+  @keyframes wordpress {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 85%;
+    }
+  }
+  /**/
+  .skills .skill .drupal {
+    width: 0%;
+    animation: 2s drupal forwards;
+  }
+  @keyframes drupal {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 60%;
+    }
+  }
+  /**/
+  .skills .skill .node {
+    width: 0%;
+    animation: 2s node forwards;
+  }
+  @keyframes node {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 60%;
+    }
+  }
+  /*---------------------------*/
+  .skills .skill .comunicacion {
+    width: 0%;
+    animation: 2s comunicacion forwards;
+  }
+  @keyframes comunicacion {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 80%;
+    }
+  }
+  /**/
+  .skills .skill .trabajo {
+    width: 0%;
+    animation: 2s trabajo forwards;
+  }
+  @keyframes trabajo {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 80%;
+    }
+  }
+  /**/
+  .skills .skill .creatividad {
+    width: 0%;
+    animation: 2s creatividad forwards;
+  }
+  @keyframes creatividad {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 95%;
+    }
+  }
+  /**/
+  .skills .skill .dedicacion {
+    width: 0%;
+    animation: 2s dedicacion forwards;
+  }
+  @keyframes dedicacion {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 75%;
+    }
+  }
+  /**/
+  .skills .skill .proyect {
+    width: 0%;
+    animation: 2s proyect forwards;
+  }
+  @keyframes proyect {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 94%;
+    }
+  }

@@ -1,0 +1,71 @@
+/* ----------------------------------------------*/
+/*                 GALERIA                    */
+/* ----------------------------------------------*/
+/* fondo galeria*/
+.galery {
+    background-color: #17191a;
+    color: #fff;
+    padding: 50px 20px;
+  }
+  /*subtitle*/
+  .galery h3 {
+    font-family: var(--font_title1);
+    font-size: var(--size_titulos);
+  }
+  /*comentario*/
+  .galery p {
+    color: #1cb698;
+    font-family: var(--font_title1);
+    font-size: 22px;
+  }
+  /*contenedor geleria fotos*/
+  .galeria-port {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    z-index: -1;
+  }
+  /* Contenedor imagenes con texto*/
+  .imagen-port {
+    width: 24%;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    z-index: -0;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+  }
+  /* imagenes*/
+  .imagen-port > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0.6; /* Ajusta este valor para cambiar la opacidad (0.0 - 1.0) */
+  }
+  /* Hover imagen texto*/
+  .hover-galeria {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(0);
+    background: hsla(155, 91%, 27%, 0.7);
+    transition: transform 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  /* Imagen hover*/
+  .hover-galeria img {
+    width: 50px;
+  }
+  /* p hover*/
+  .hover-galeria p {
+    color: #fff;
+  }
+  /* Animacion*/
+  .imagen-port:hover .hover-galeria {
+    transform: scale(1);
+  }
