@@ -47,7 +47,7 @@ function AboutMe() {
               <li>
                 <i className="fa-solid fa-phone"></i>
                 <strong>Teléfono</strong>
-                {userData.telefono}
+                +51 {userData.telefono}
               </li>
               <li>
                 <i className="fa-solid fa-globe"></i>

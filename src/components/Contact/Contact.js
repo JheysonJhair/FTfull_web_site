@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Ubicacion from '../../assets/webp/ubicacion.webp';
 import './Contact.css';
+import { getUserData } from "../../services/user"; 
 
 function Contact() {
+  const [userData, setUserData] = useState({});
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getUserData();
+        if (data) {
+          setUserData(data);
+        }
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
     <section id="contacto" className="contacto">
       <div className="contenido-seccion">
@@ -90,15 +107,15 @@ function Contact() {
               <ul>
                 <li>
                   <i className="fa-solid fa-location-dot"></i>
-                  Perú
+                  {userData.direccion}
                 </li>
                 <li>
                   <i className="fa-solid fa-mobile-screen"></i>
-                  Llámame: +51 983 805 438
+                  Llámame: +51 {userData.telefono}
                 </li>
                 <li>
                   <i className="fa-solid fa-envelope"></i>
-                  Email: jheysonjhairpro@gmail.com
+                  Email: {userData.email}
                 </li>
               </ul>
             </div>
