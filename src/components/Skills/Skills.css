@@ -79,172 +79,19 @@
     border-bottom: 3px solid transparent;
     color: #ffffff;
   }
-  /*clases en javascript */
-  .skills .skill .java {
+/* Skills.css */
+
+.skills .barra-skill .progreso {
+  width: 0%;
+  animation: 2s habilidad forwards;
+}
+
+@keyframes habilidad {
+  0% {
     width: 0%;
-    animation: 2s java forwards;
   }
-  @keyframes java {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 85%;
-    }
+  100% {
+    width: var(--porcentaje);
   }
-  /**/
-  .skills .skill .javascript {
-    width: 0%;
-    animation: 2s javascript forwards;
-  }
-  @keyframes javascript {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 75%;
-    }
-  }
-  /**/
-  .skills .skill .typescript {
-    width: 0%;
-    animation: 2s typescript forwards;
-  }
-  @keyframes typescript {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 85%;
-    }
-  }
-  /**/
-  .skills .skill .htmlcss {
-    width: 0%;
-    animation: 2s htmlcss forwards;
-  }
-  @keyframes htmlcss {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 92%;
-    }
-  }
-  /**/
-  .skills .skill .photoshop {
-    width: 0%;
-    animation: 2s photoshop forwards;
-  }
-  @keyframes photoshop {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 75%;
-    }
-  }
-  /**/
-  .skills .skill .wordpress {
-    width: 0%;
-    animation: 2s wordpress forwards;
-  }
-  @keyframes wordpress {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 85%;
-    }
-  }
-  /**/
-  .skills .skill .drupal {
-    width: 0%;
-    animation: 2s drupal forwards;
-  }
-  @keyframes drupal {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 60%;
-    }
-  }
-  /**/
-  .skills .skill .node {
-    width: 0%;
-    animation: 2s node forwards;
-  }
-  @keyframes node {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 60%;
-    }
-  }
-  /*---------------------------*/
-  .skills .skill .comunicacion {
-    width: 0%;
-    animation: 2s comunicacion forwards;
-  }
-  @keyframes comunicacion {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 80%;
-    }
-  }
-  /**/
-  .skills .skill .trabajo {
-    width: 0%;
-    animation: 2s trabajo forwards;
-  }
-  @keyframes trabajo {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 80%;
-    }
-  }
-  /**/
-  .skills .skill .creatividad {
-    width: 0%;
-    animation: 2s creatividad forwards;
-  }
-  @keyframes creatividad {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 95%;
-    }
-  }
-  /**/
-  .skills .skill .dedicacion {
-    width: 0%;
-    animation: 2s dedicacion forwards;
-  }
-  @keyframes dedicacion {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 75%;
-    }
-  }
-  /**/
-  .skills .skill .proyect {
-    width: 0%;
-    animation: 2s proyect forwards;
-  }
-  @keyframes proyect {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 94%;
-    }
-  }
+}
+

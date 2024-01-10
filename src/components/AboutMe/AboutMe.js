@@ -1,17 +1,38 @@
-import React from "react";
-import './AboutMe.css';
+import React, { useState, useEffect } from "react";
+import "./AboutMe.css";
+import { getUserData, getUserInterests } from "../../services/user";
 
 function AboutMe() {
+  const [userData, setUserData] = useState({});
+  const [userInterests, setUserInterests] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const userDataResponse = await getUserData();
+        const userInterestsResponse = await getUserInterests();
+
+        if (userDataResponse) {
+          setUserData(userDataResponse);
+        }
+
+        if (userInterestsResponse) {
+          setUserInterests(userInterestsResponse);
+        }
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <section id="sobremi" className="sobremi">
       <div className="contenido-seccion">
         <h2>Sobre Mí</h2>
         <p className="t2">
-          <span>Hola! soy Jheyson Jhair Arone Angeles.</span> Soy un
-          desarrollador web y programador apasionado por crear soluciones
-          digitales excepcionales. Mi objetivo es proporcionar experiencias
-          intuitivas y atractivas a través de la combinación de diseño estético
-          y funcionalidad impecable.
+          <span>Hola! soy {userData.nombre} Arone Angeles </span>{userData.sobreMi}
         </p>
 
         <div className="fila">
@@ -21,18 +42,18 @@ function AboutMe() {
               <li>
                 <i className="fa-solid fa-envelope"></i>
                 <strong>Email</strong>
-                jheysonjhairpro@gmail.com
+                {userData.email}
               </li>
               <li>
                 <i className="fa-solid fa-phone"></i>
                 <strong>Teléfono</strong>
-                +51 983 805 438
+                {userData.telefono}
               </li>
               <li>
                 <i className="fa-solid fa-globe"></i>
                 <strong>WebSite</strong>
                 <a
-                  href="https://jheysonjhairpro.ccontrolz.com"
+                  href={userData.website}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -42,50 +63,24 @@ function AboutMe() {
               <li>
                 <i className="fa-solid fa-location-dot"></i>
                 <strong>Dirección</strong>
-                Perú
+                {userData.direccion}
               </li>
               <li>
                 <i className="fa-solid fa-user-tie"></i>
                 <strong>Cargo</strong>
-                <span>FULL STACK DEVELOPER</span>
+                <span>{userData.cargo}</span>
               </li>
             </ul>
           </div>
           <div className="col">
             <h3>Intereses</h3>
             <div className="contenedor-intereses">
-              <div className="interes">
-                <i className="fa-solid fa-gamepad"></i>
-                <span>JUEGOS</span>
-              </div>
-              <div className="interes">
-                <i className="fa-solid fa-headphones"></i>
-                <span>MUSICA</span>
-              </div>
-              <div className="interes">
-                <i className="fa-solid fa-plane"></i>
-                <span>VIAJAR</span>
-              </div>
-              <div className="interes">
-                <i className="fa-solid fa-pencil"></i>
-                <span>DIBUJO</span>
-              </div>
-              <div className="interes">
-                <i className="fa-solid fa-laptop"></i>
-                <span>PROGRAMAR</span>
-              </div>
-              <div className="interes">
-                <i className="fa-solid fa-pen-nib"></i>
-                <span>DISEÑO</span>
-              </div>
-              <div className="interes">
-                <i className="fa-brands fa-edge"></i>
-                <span>EDICIÓN</span>
-              </div>
-              <div className="interes">
-                <i className="fa-solid fa-video"></i>
-                <span>VIDEOS</span>
-              </div>
+              {userInterests.map((interest, index) => (
+                <div className="interes" key={index}>
+                  <i className={`${interest.icono}`}></i>
+                  <span>{interest.nombre.toUpperCase()}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
