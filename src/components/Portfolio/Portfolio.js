@@ -1,153 +1,123 @@
-import React from 'react';
-import './Portafolio.css';
+import React, { useState, useEffect } from "react";
+import "./Portafolio.css";
+import { getUsersBriefcase } from "../../services/user";
+import Android from "../../assets/portfolio/android.webp";
+import Escritorio from "../../assets/portfolio/escritorio.webp";
+import Web from "../../assets/portfolio/web.webp";
+
 function Portfolio() {
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
+  const [proyectos, setProyectos] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getUsersBriefcase();
+        setProyectos(data);
+      } catch (error) {}
+    };
+
+    fetchData();
+  }, []);
+
+  const filtrarCategoria = (categoria) => {
+    setCategoriaSeleccionada(categoria);
+  };
+
+  const proyectosFiltrados =
+    categoriaSeleccionada === "todos"
+      ? proyectos
+      : proyectos.filter(
+          (proyecto) =>
+            proyecto.tipo ===
+            (categoriaSeleccionada === "web"
+              ? 1
+              : categoriaSeleccionada === "escritorio"
+              ? 2
+              : 3)
+        );
+
   return (
-<>
-<section className="w" id="portafolios">
-      <section className="contenedor" id="trabajo">
-        <h2>Portafolio</h2>
-        <p className="after">De algo simple algo extraordinario</p>
+    <>
+      <section className="w" id="portafolios">
+        <section className="contenedor" id="trabajo">
+          <h2>Portafolio</h2>
+          <p className="after">De algo simple algo extraordinario</p>
 
-        <div className="botones-work">
-          <ul>
-            <li className="filter active" data-nombre="todos">Todos</li>
-            <li className="filter" data-nombre="programacion">Web</li>
-            <li className="filter" data-nombre="diseño">Escritorio</li>
-            <li className="filter" data-nombre="marketing">Android</li>
-          </ul>
-        </div>
-        <div className="galeria-work">
-          <div className="cont-work programacion">
-            <div className="img-work">
-              <img src="img/webp/we.webp" alt="" />
-              <div className="img-caption">SOUND THEZER</div>
-            </div>
-            <div className="textos-work">
-              <h4>Reproductor de video y música</h4>
-            </div>
-          </div>
-
-          <div className="cont-work programacion">
-            <div className="img-work">
-              <img src="img/webp/we.webp" alt="" />
-              <div className="img-caption">SALE OF TICKET</div>
-            </div>
-            <div className="textos-work">
-              <h4>Sistema de venta de ticket</h4>
-            </div>
-          </div>
-          <div className="cont-work programacion">
-            <div className="img-work">
-              <img src="img/webp/we.webp" alt="" />
-              <div className="img-caption">REPODOCS</div>
-            </div>
-            <div className="textos-work">
-              <h4>Repositorio de archivos</h4>
-            </div>
-          </div>
-          <div className="cont-work programacion">
-            <div className="img-work">
-              <img src="img/webp/we.webp" alt="" />
-              <div className="img-caption">JHEWEKEND</div>
-            </div>
-            <div className="textos-work">
-              <h4>Página web</h4>
-            </div>
-          </div>
-          <div className="cont-work programacion">
-            <div className="img-work">
-              <img src="img/webp/we.webp" alt="" />
-              <div className="img-caption">EIPRES</div>
-            </div>
-            <div className="textos-work">
-              <h4>Sistema de cálculo presupuestal</h4>
-            </div>
-          </div>
-          <div className="cont-work diseño">
-            <div className="img-work">
-              <img src="img/webp/es.webp" alt="" />
-              <div className="img-caption">MARVISUR</div>
-            </div>
-            <div className="textos-work">
-              <h4>Sistema de encomiendas</h4>
-            </div>
+          <div className="botones-work">
+            <ul>
+              <li
+                className={`filter ${
+                  categoriaSeleccionada === "todos" ? "active" : ""
+                }`}
+                onClick={() => filtrarCategoria("todos")}
+                data-nombre="todos"
+              >
+                Todos
+              </li>
+              <li
+                className={`filter ${
+                  categoriaSeleccionada === "web" ? "active" : ""
+                }`}
+                onClick={() => filtrarCategoria("web")}
+                data-nombre="web"
+              >
+                Web
+              </li>
+              <li
+                className={`filter ${
+                  categoriaSeleccionada === "escritorio" ? "active" : ""
+                }`}
+                onClick={() => filtrarCategoria("escritorio")}
+                data-nombre="escritorio"
+              >
+                Escritorio
+              </li>
+              <li
+                className={`filter ${
+                  categoriaSeleccionada === "android" ? "active" : ""
+                }`}
+                onClick={() => filtrarCategoria("android")}
+                data-nombre="android"
+              >
+                Android
+              </li>
+            </ul>
           </div>
 
-          <div className="cont-work diseño">
-            <div className="img-work">
-              <img src="img/webp/es.webp" alt="" />
-              <div className="img-caption">CALCULIP</div>
-            </div>
-            <div className="textos-work">
-              <h4>Calculadora de IPs</h4>
-            </div>
+          <div className="galeria-work">
+            {proyectosFiltrados.map((proyecto, index) => (
+              <div
+                key={index}
+                className={`cont-work ${
+                  proyecto.tipo === 1
+                    ? "web"
+                    : proyecto.tipo === 2
+                    ? "escritorio"
+                    : "android"
+                }`}
+              >
+                <div className="img-work">
+                  {proyecto.tipo === 1 && (
+                    <img src={Web} alt={proyecto.proyecto} />
+                  )}
+                  {proyecto.tipo === 2 && (
+                    <img src={Escritorio} alt={proyecto.proyecto} />
+                  )}
+                  {proyecto.tipo === 3 && (
+                    <img src={Android} alt={proyecto.proyecto} />
+                  )}
+                  <div className="img-caption">{proyecto.proyecto}</div>
+                </div>
+                <div className="textos-work">
+                  <h4>{proyecto.texto}</h4>
+                </div>
+              </div>
+            ))}
           </div>
-          <div className="cont-work diseño">
-            <div className="img-work">
-              <img src="img/webp/es.webp" alt="" />
-              <div className="img-caption">CALCULADORA</div>
-            </div>
-            <div className="textos-work">
-              <h4>Calculadora científica</h4>
-            </div>
-          </div>
-          <div className="cont-work diseño">
-            <div className="img-work">
-              <img src="img/webp/es.webp" alt="" />
-              <div className="img-caption">SIVEN</div>
-            </div>
-            <div className="textos-work">
-              <h4>Sistema de ventas</h4>
-            </div>
-          </div>
-          <div className="cont-work diseño">
-            <div className="img-work">
-              <img src="img/webp/es.webp" alt="" />
-              <div className="img-caption">JAMDER</div>
-            </div>
-            <div className="textos-work">
-              <h4>Sistema de cotización de autos</h4>
-            </div>
-          </div>
-          <div className="cont-work marketing">
-            <div className="img-work">
-              <img src="img/webp/an.webp" alt="" />
-              <div className="img-caption">XGOO</div>
-            </div>
-            <div className="textos-work">
-              <h4>Venta de licores</h4>
-            </div>
-          </div>
-          <div className="cont-work marketing">
-            <div className="img-work">
-              <img src="img/webp/an.webp" alt="" />
-              <div className="img-caption">THE MINIMUN DANGER</div>
-            </div>
-            <div className="textos-work">
-              <h4>Juego aventura</h4>
-            </div>
-          </div>
-          <div className="cont-work marketing">
-            <div className="img-work">
-              <img src="img/webp/an.webp" alt="" />
-              <div className="img-caption">PACMAN</div>
-            </div>
-            <div className="textos-work">
-              <h4>Juego retro</h4>
-            </div>
-          </div>
-          <div id="modal" className="modal">
-            <span className="close">&times;</span>
-            <div className="modal-content">
-              <h2 className="modal-t" id="modal-title"></h2>
-              <div className="modal-images"></div>
-              <div className="modal-skills"></div>
-            </div>
-          </div>
-        </div>
+        </section>
       </section>
-    </section>
-</>
+    </>
   );
 }
 

@@ -37,4 +37,14 @@ export const getUserSkills = async () => {
       return null;
     }
   };
-  
+
+export const getUsersBriefcase = async () => {
+  try {
+    const response = await fetch('http://localhost:3001/users/briefcase');
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error; 
+  }
+};
