@@ -4,10 +4,13 @@ import { getUsersBriefcase } from "../../services/user";
 import Android from "../../assets/portfolio/android.webp";
 import Escritorio from "../../assets/portfolio/escritorio.webp";
 import Web from "../../assets/portfolio/web.webp";
+import Modal from './Modal';
 
 function Portfolio() {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
   const [proyectos, setProyectos] = useState([]);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [modalVisible, setModalVisible] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,6 +27,16 @@ function Portfolio() {
     setCategoriaSeleccionada(categoria);
   };
 
+  const openModal = (project) => {
+    setSelectedProject(project);
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+    setModalVisible(false);
+  };
+
   const proyectosFiltrados =
     categoriaSeleccionada === "todos"
       ? proyectos
@@ -36,7 +49,6 @@ function Portfolio() {
               ? 2
               : 3)
         );
-
   return (
     <>
       <section className="w" id="portafolios">
@@ -96,6 +108,7 @@ function Portfolio() {
                     ? "escritorio"
                     : "android"
                 }`}
+                onClick={() => openModal(proyecto)}
               >
                 <div className="img-work">
                   {proyecto.tipo === 1 && (
@@ -117,6 +130,9 @@ function Portfolio() {
           </div>
         </section>
       </section>
+      {modalVisible && selectedProject && (
+        <Modal project={selectedProject} onClose={closeModal} />
+      )}
     </>
   );
 }
