@@ -90,6 +90,17 @@
     padding: 1rem 1.5rem;
     border-radius: 10px;
   }
+  .home__buttons .des {
+    background-color: var(--secondary-bg-color);
+    font-family: var(--font_title1);
+    font-size: 18px;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    border: none;
+    margin-right: 4px;
+    cursor: pointer;
+  }
   .cursor-pointer {
     font-family: var(--font_title1);
     cursor: pointer;

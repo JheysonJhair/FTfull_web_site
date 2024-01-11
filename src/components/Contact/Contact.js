@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Ubicacion from '../../assets/webp/ubicacion.webp';
-import './Contact.css';
-import { getUserData } from "../../services/user"; 
+import Ubicacion from "../../assets/webp/ubicacion.webp";
+import "./Contact.css";
+import { getUserData } from "../../services/user";
 
 function Contact() {
   const [userData, setUserData] = useState({});
-  
+
   useEffect(() => {
     const fetchData = async () => {
       try {

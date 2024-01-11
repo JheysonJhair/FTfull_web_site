@@ -1,4 +1,5 @@
 
+
 export const getUserData = async () => {
     try {
       const response = await fetch("http://localhost:3001/users");
@@ -9,6 +10,22 @@ export const getUserData = async () => {
       return null;
     }
   };
+
+export const downloadCV = async (userId) => {
+  try {
+    const response = await fetch(`http://localhost:3001/users/downloadCV/${userId}`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const blob = await response.blob();
+    return blob;
+  } catch (error) {
+    console.error("Error al descargar CV:", error);
+    throw error;
+  }
+};
+
 
 export const getUserInterests = async () => {
     try {

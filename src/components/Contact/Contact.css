@@ -3,99 +3,98 @@
 /* ----------------------------------------------*/
 /*fondo contacto*/
 .contacto {
-    background-image: url(../../assets//webp//contact_bg.webp);
-    background-color: #1e2326;
-    color: #fff;
-    padding: 50px 0;
-  }
-  /*contenedor fila*/
-  .contacto .contenido-seccion {
-    max-width: 1100px;
-    margin: auto;
-  }
-  /*title*/
-  .contacto h2 {
-    font-size: 48px;
-    font-family: "Righteous";
-    text-align: center;
-    padding: 20px 0;
-  }
-  /*fila*/
-  .contacto .fila {
-    display: flex;
-  }
-  /*columnas*/
-  .contacto .col {
-    width: 50%;
-    padding: 10px;
-    position: relative;
-  }
-  /*inputs*/
-  .contacto .col input,
-  .contacto .col textarea {
-    display: block;
-    width: 100%;
-    padding: 18px;
-    border: none;
-    margin-bottom: 20px;
-    background-color: #252a2e;
-    color: #fff;
-    font-size: 18px;
-  }
-  /*boton enviar*/
-  .contacto button {
-    cursor: pointer;
-    background-color: transparent;
-    border: 2px solid #fff;
-    width: fit-content;
-    display: block;
-    margin: 20px auto;
-    padding: 10px 22px;
-    font-size: 16px;
-    color: #fff;
-    position: relative;
-    z-index: 10;
-  }
-  /*efecto*/
-  .contacto button .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background-color: #1cb698;
-    z-index: -1;
-    transition: 1s;
-  }
-  .contacto button:hover .overlay {
-    width: 100%;
-  }
-  /*imagen columna mapa*/
-  .contacto .col img {
-    width: 100%;
-    opacity: 0.8;
-  }
-  /*cuadro informacion*/
-  .contacto .col .info {
-    position: absolute;
-    top: 35%;
-    background-color: #252a2e;
-    padding: 20px;
-    left: 40%;
-    transform: translate(-30%, -48%);
-  }
-  /*lista*/
-  .contacto .col .info ul {
-    list-style: none;
-  }
-  /*items*/
-  .contacto .col .info ul li {
-    margin-bottom: 20px;
-  }
-  /*icono*/
-  .contacto .col .info ul li i {
-    color: #1cb698;
-    display: inline-block;
-    margin-right: 20px;
-  }
-  
+  background-image: url(../../assets//webp//contact_bg.webp);
+  background-color: #1e2326;
+  color: #fff;
+  padding: 50px 0;
+}
+/*contenedor fila*/
+.contacto .contenido-seccion {
+  max-width: 1100px;
+  margin: auto;
+}
+/*title*/
+.contacto h2 {
+  font-size: 48px;
+  font-family: "Righteous";
+  text-align: center;
+  padding: 20px 0;
+}
+/*fila*/
+.contacto .fila {
+  display: flex;
+}
+/*columnas*/
+.contacto .col {
+  width: 50%;
+  padding: 10px;
+  position: relative;
+}
+/*inputs*/
+.contacto .col input,
+.contacto .col textarea {
+  display: block;
+  width: 100%;
+  padding: 18px;
+  border: none;
+  margin-bottom: 20px;
+  background-color: #252a2e;
+  color: #fff;
+  font-size: 18px;
+}
+/*boton enviar*/
+.contacto button {
+  cursor: pointer;
+  background-color: transparent;
+  border: 2px solid #fff;
+  width: fit-content;
+  display: block;
+  margin: 20px auto;
+  padding: 10px 22px;
+  font-size: 16px;
+  color: #fff;
+  position: relative;
+  z-index: 10;
+}
+/*efecto*/
+.contacto button .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #1cb698;
+  z-index: -1;
+  transition: 1s;
+}
+.contacto button:hover .overlay {
+  width: 100%;
+}
+/*imagen columna mapa*/
+.contacto .col img {
+  width: 100%;
+  opacity: 0.8;
+}
+/*cuadro informacion*/
+.contacto .col .info {
+  position: absolute;
+  top: 35%;
+  background-color: #252a2e;
+  padding: 20px;
+  left: 40%;
+  transform: translate(-30%, -48%);
+}
+/*lista*/
+.contacto .col .info ul {
+  list-style: none;
+}
+/*items*/
+.contacto .col .info ul li {
+  margin-bottom: 20px;
+}
+/*icono*/
+.contacto .col .info ul li i {
+  color: #1cb698;
+  display: inline-block;
+  margin-right: 20px;
+}

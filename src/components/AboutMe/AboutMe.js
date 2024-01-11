@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./AboutMe.css";
-import { getUserData, getUserInterests } from "../../services/user";
+import { getUserData, getUserInterests, downloadCV } from "../../services/user";
 
 function AboutMe() {
   const [userData, setUserData] = useState({});
@@ -26,13 +26,29 @@ function AboutMe() {
 
     fetchData();
   }, []);
+  const handleDownloadCV = async (userId) => {
+    try {
+      const cvBlob = await downloadCV(userId);
+
+      const cvUrl = window.URL.createObjectURL(cvBlob);
+      const link = document.createElement("a");
+      link.href = cvUrl;
+      link.setAttribute("download", "Currículum_JheysonJhairAroneAngeles.pdf");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error("Error al descargar CV:", error);
+    }
+  };
 
   return (
     <section id="sobremi" className="sobremi">
       <div className="contenido-seccion">
         <h2>Sobre Mí</h2>
         <p className="t2">
-          <span>Hola! soy {userData.nombre} Arone Angeles </span>{userData.sobreMi}
+          <span>Hola! soy {userData.nombre} Arone Angeles </span>
+          {userData.sobreMi}
         </p>
 
         <div className="fila">
@@ -84,18 +100,16 @@ function AboutMe() {
             </div>
           </div>
         </div>
-        <button className="cv">
-          <a
-            href="./pdf/Currículum JheysonJhairAroneAngeles.pdf"
-            aria-label="Descargar curriculum"
-            download
-            rel="noopener noreferrer"
-          >
-            Descargar CV
-          </a>
+        <button
+          className="des"
+          onClick={() => handleDownloadCV(userData.idUser)}
+        >
+          Descargar CV
           <i className="fa-solid fa-download"></i>
           <span className="overlay"></span>
         </button>
+
+        <span className="overlay"></span>
       </div>
     </section>
   );

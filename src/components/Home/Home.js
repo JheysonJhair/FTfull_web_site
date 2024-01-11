@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
 import Perfil from "../../assets/webp/perfil.webp";
-import { getUserData } from "../../services/user"; 
+import { getUserData, downloadCV } from "../../services/user";
 
 function Home() {
   const [text, setText] = useState("");
@@ -61,7 +61,23 @@ function Home() {
       });
     }
   };
-  
+
+  const handleDownloadCV = async (userId) => {
+    try {
+      const cvBlob = await downloadCV(userId);
+
+      const cvUrl = window.URL.createObjectURL(cvBlob);
+      const link = document.createElement("a");
+      link.href = cvUrl;
+      link.setAttribute("download", "Currículum_JheysonJhairAroneAngeles.pdf");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error("Error al descargar CV:", error);
+    }
+  };
+
   return (
     <div className="left__content container">
       <section
@@ -87,14 +103,12 @@ function Home() {
           </div>
 
           <div className="home__buttons flex align-items-center gap-2 mt-6">
-            <a
-              href="./pdf/Currículum JheysonJhairAroneAngeles.pdf"
-              aria-label="Descargar curriculum"
-              className="mess aa"
-              download
+            <button
+              className="des"
+              onClick={() => handleDownloadCV(userData.idUser)}
             >
               Descargar CV
-            </a>
+            </button>
             <button
               onClick={scrollToPortfolio}
               aria-label="Deslizar a sección portafolio para mostrar mis trabajos"

@@ -10,9 +10,9 @@ import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import '@fortawesome/fontawesome-free/css/all.min.css'; 
 import './index.css'; 
-import './assets/styles/_variables.scss'; // Importa tus variables y fuentes
-import './assets/styles/_global.scss'; // Importa tus estilos globales
-import './index.css'; // Asegúrate de tener tu archivo de estilos CSS global
+import './assets/styles/_variables.scss'; 
+import './assets/styles/_global.scss'; 
+import './index.css'; 
 
 function App() {
   return (
