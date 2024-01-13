@@ -1,4 +1,5 @@
 import "./App.css";
+import "./components/responsive.css";
 import React from 'react';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
@@ -12,7 +13,6 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import './index.css'; 
 import './assets/styles/_variables.scss'; 
 import './assets/styles/_global.scss'; 
-import './index.css'; 
 
 function App() {
   return (

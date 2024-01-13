@@ -163,13 +163,12 @@
 }
 
 .modal-content img {
-  width: 900px;
-  height: 460px;
+  width: 98%;
+  height: 55%;
   border-radius: 4px;
   margin-bottom: 15px;
   margin-top: 15px;
 }
-
 .buttons-container {
   display: flex;
   justify-content: space-between;
@@ -235,4 +234,33 @@
 .modal-enlaces {
   display: inline-block;
   margin: 10px; 
+}.modal-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 20px;
+  z-index: 1;
+  display: flex;
+}
+
+.modal-enlaces {
+  display: inline-block;
+  margin: 10px;
+  width: 40%;
+}
+
+.modal-skills {
+  width: 60%;
+}
+
+.descripcion {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: justify;
+}
+
+.descripcion p {
+  margin: 0;
+  padding: 0;
 }

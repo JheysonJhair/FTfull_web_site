@@ -1,112 +1,148 @@
 .contenedor-header {
-    background: #363e43;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 99;
-    height: 80px;
-    position: fixed;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-  }
-  .contenedor-header header {
-    max-width: 80%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    height: 80px;
-  }
-  .contenedor-header header .logo a {
-    font-family: "Righteous";
-    font-size: 36px;
-    color: #1cb698;
-    text-decoration: none;
-  }
-  .contenedor-header header ul {
-    display: flex;
-    list-style: none;
-  }
-  .contenedor-header header nav ul li a {
-    text-align: none;
-    color: #ffffffbc;
-    font-family: var(--font_title1);
-    margin: 0 15px;
-    padding: 3px;
-    transition: 0.5s;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  .contenedor-header header nav ul li a:hover {
-    color: #1cb698;
-  }
-  .nav-responsive {
-    background-color: #1cb698;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: none;
-  }
-  /* Contenedor header*/
-  header {
-    width: 100%;
-    height: 80px;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-  }
-  
-  /* Logotipo*/
-  .logo,
-  .logo img {
-    height: 70px;
-  }
-  /* Logotipo:hover*/
-  .logo,
-  .logo img:hover {
-    cursor: pointer;
-  }
-  /* Enlaces*/
-  .btn-header.active {
-    color: #38b29c ;
-  }
-  
-  /* Contenedor textos*/
-  .textos {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    color: #fff;
-    overflow: hidden;
-    text-align: center;
-    font-family: "open sans";
-  }
-  
-  /* Boton contratame*/
-  
-  .hireMe__button {
-    display: inline-block;
-  }
-  
-  .hireMe__button a {
-    display: inline-block;
-    background-color: #00886e;
-    color: white; /* Color de texto blanco */
-    padding: 1rem 1.5rem;
-    font-family: var(--font_title1);
-    font-size: 20px;
-    font-weight: 200;
-    text-decoration: none;
-    border: none;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out; /* Transición suave para la transformación */
-  }
-  
-  .hireMe__button a:hover {
-    transform: scale(1.05); /* Efecto de agrandamiento */
-  }
+  background: #363e43;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  height: 80px;
+  position: fixed;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+.contenedor-header header {
+  max-width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  height: 80px;
+}
+.contenedor-header header .logo a {
+  font-family: "Righteous";
+  font-size: 36px;
+  color: #1cb698;
+  text-decoration: none;
+}
+.contenedor-header header ul {
+  display: flex;
+  list-style: none;
+}
+.contenedor-header header nav ul li a {
+  text-align: none;
+  color: #ffffffbc;
+  font-family: var(--font_title1);
+  margin: 0 15px;
+  padding: 3px;
+  transition: 0.5s;
+  text-decoration: none;
+  font-size: 17px;
+}
+.contenedor-header header nav ul li a:hover {
+  color: #1cb698;
+}
+.nav-responsive {
+  background-color: #1cb698;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+}
+/* Contenedor header*/
+header {
+  width: 100%;
+  height: 80px;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Logotipo*/
+.logo,
+.logo img {
+  height: 70px;
+}
+/* Logotipo:hover*/
+.logo,
+.logo img:hover {
+  cursor: pointer;
+}
+/* Enlaces*/
+.btn-header.active {
+  color: #38b29c;
+}
+
+/* Contenedor textos*/
+.textos {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+  text-align: center;
+  font-family: "open sans";
+}
+
+/* Boton contratame*/
+
+.hireMe__button {
+  display: inline-block;
+}
+
+.hireMe__button a {
+  display: inline-block;
+  background-color: #00886e;
+  color: white; 
+  padding: 1rem 1.5rem;
+  font-family: var(--font_title1);
+  font-size: 20px;
+  font-weight: 200;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out; 
+}
+
+.hireMe__button a:hover {
+  transform: scale(1.05); 
+}
+
+
+#nav-responsive {
+  background: #2d3438;
+  position: absolute;
+  top: 80px; 
+  right: 0;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+#nav-responsive ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+}
+
+#nav-responsive li {
+  border-bottom: 1px solid #fff;
+  width: 100%;
+  padding: 6px 0;
+}
+
+#nav-responsive a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 17px;
+  display: block; 
+  text-align: center; 
+  padding: 10px; 
+}

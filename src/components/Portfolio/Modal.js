@@ -50,7 +50,9 @@ const Modal = ({ project, onClose }) => {
           </span>
           <h2>Proyecto: {project.proyecto}</h2>
           <img src={project.image} alt={project.proyecto} />
+          <div className="descripcion">
           <p>{project.descripcion}</p>
+          </div>
         </div>
         <div className="buttons-container">
           <div className="modal-skills">

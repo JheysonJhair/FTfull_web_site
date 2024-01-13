@@ -1,43 +1,60 @@
-import React, { useEffect } from "react";
-import './Header.css';
-import Logo from '../../assets/webp/Logo.webp';
+import React, { useEffect, useState } from "react";
+import "./Header.css";
+import Logo from "../../assets/webp/Logo.webp";
 
 function Header() {
+  const [isMenuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
-const scrollToTarget = (targetId) => {
-  const targetElement = document.getElementById(targetId);
-  if (targetElement) {
-    const offset = 84;
-    const targetPosition = targetId === 'inicio' ? 0 : targetElement.offsetTop - offset;
+    const scrollToTarget = (targetId) => {
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        const offset = 84;
+        const targetPosition =
+          targetId === "inicio" ? 0 : targetElement.offsetTop - offset;
 
-    window.scrollTo({
-      top: targetPosition,
-      behavior: "smooth",
-    });
-  }
-};
-
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth",
+        });
+      }
+    };
 
     const handleLinkClick = (e, targetId) => {
       e.preventDefault();
 
-      const links = document.querySelectorAll('.btn-header');
-      links.forEach(link => link.classList.remove('active'));
+      const links = document.querySelectorAll(".btn-header");
+      links.forEach((link) => link.classList.remove("active"));
 
-      e.target.classList.add('active');
+      e.target.classList.add("active");
 
       scrollToTarget(targetId);
     };
 
-    document.getElementById('enlace-inicio').classList.add('active');
+    document.getElementById("enlace-inicio").classList.add("active");
 
-    document.getElementById('enlace-inicio').addEventListener('click', (e) => handleLinkClick(e, 'inicio'));
-    document.getElementById('enlace-sobremi').addEventListener('click', (e) => handleLinkClick(e, 'sobremi'));
-    document.getElementById('enlace-skills').addEventListener('click', (e) => handleLinkClick(e, 'skills'));
-    document.getElementById('enlace-servicios').addEventListener('click', (e) => handleLinkClick(e, 'servicios'));
-    document.getElementById('enlace-portafolios').addEventListener('click', (e) => handleLinkClick(e, 'portafolios'));
-    document.getElementById('enlace-contacto').addEventListener('click', (e) => handleLinkClick(e, 'contacto'));
+    document
+      .getElementById("enlace-inicio")
+      .addEventListener("click", (e) => handleLinkClick(e, "inicio"));
+    document
+      .getElementById("enlace-sobremi")
+      .addEventListener("click", (e) => handleLinkClick(e, "sobremi"));
+    document
+      .getElementById("enlace-skills")
+      .addEventListener("click", (e) => handleLinkClick(e, "skills"));
+    document
+      .getElementById("enlace-servicios")
+      .addEventListener("click", (e) => handleLinkClick(e, "servicios"));
+    document
+      .getElementById("enlace-portafolios")
+      .addEventListener("click", (e) => handleLinkClick(e, "portafolios"));
+    document
+      .getElementById("enlace-contacto")
+      .addEventListener("click", (e) => handleLinkClick(e, "contacto"));
   }, []);
+
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
 
   return (
     <>
@@ -64,12 +81,20 @@ const scrollToTarget = (targetId) => {
                 </a>
               </li>
               <li>
-                <a href="#servicios" id="enlace-servicios" className="btn-header">
+                <a
+                  href="#servicios"
+                  id="enlace-servicios"
+                  className="btn-header"
+                >
                   SERVICIOS
                 </a>
               </li>
               <li>
-                <a href="#portafolios" id="enlace-portafolios" className="btn-header">
+                <a
+                  href="#portafolios"
+                  id="enlace-portafolios"
+                  className="btn-header"
+                >
                   PORTAFOLIO
                 </a>
               </li>
@@ -90,9 +115,45 @@ const scrollToTarget = (targetId) => {
               Contratame
             </a>
           </div>
-          <div className="nav-responsive">
+          <div className="nav-responsive" onClick={toggleMenu}>
             <i className="fa-solid fa-bars"></i>
           </div>
+          {isMenuOpen && (
+            <nav id="nav-responsive">
+              <ul>
+                <li>
+                  <a href="#inicio" className="btn-header">
+                    INICIO
+                  </a>
+                </li>
+                <li>
+                  <a href="#sobremi" className="btn-header">
+                    SOBRE MI
+                  </a>
+                </li>
+                <li>
+                  <a href="#skills" className="btn-header">
+                    APTITUDES
+                  </a>
+                </li>
+                <li>
+                  <a href="#servicios" className="btn-header">
+                    SERVICIOS
+                  </a>
+                </li>
+                <li>
+                  <a href="#portafolios" className="btn-header">
+                    PORTAFOLIO
+                  </a>
+                </li>
+                <li>
+                  <a href="#contacto" className="btn-header">
+                    CONTACTO
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          )}
         </header>
       </div>
     </>

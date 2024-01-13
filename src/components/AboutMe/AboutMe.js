@@ -47,7 +47,7 @@ function AboutMe() {
       <div className="contenido-seccion">
         <h2>Sobre Mí</h2>
         <p className="t2">
-          <span>Hola! soy {userData.nombre} Arone Angeles </span>
+          <span>Hola! soy {userData.username} Arone Angeles </span>
           {userData.sobreMi}
         </p>
 
