@@ -3,7 +3,7 @@
 
 export const getUserData = async () => {
   try {
-    const response = await fetch("https://jheysonjhairprob.ccontrolz.com/api/users");
+    const response = await fetch("https://jheysonjhairprob.ccontrolz.com/api/user/users");
     const data = await response.json();
     return data.length > 0 ? data[0] : null;
   } catch (error) {
@@ -14,7 +14,7 @@ export const getUserData = async () => {
 
 export const downloadCV = async (userId) => {
 try {
-  const response = await fetch(`https://jheysonjhairprob.ccontrolz.com/api/downloadCV/${userId}`);
+  const response = await fetch(`https://jheysonjhairprob.ccontrolz.com/api/user/downloadCV/${userId}`);
   if (!response.ok) {
     throw new Error(`HTTP error! Status: ${response.status}`);
   }
@@ -30,7 +30,7 @@ try {
 
 export const getUserInterests = async () => {
   try {
-    const response = await fetch("https://jheysonjhairprob.ccontrolz.com/api/interests");
+    const response = await fetch("https://jheysonjhairprob.ccontrolz.com/api/user/interests");
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
@@ -44,7 +44,7 @@ export const getUserInterests = async () => {
 
 export const getUserSkills = async () => {
   try {
-    const response = await fetch("https://jheysonjhairprob.ccontrolz.com/api/aptitudes");
+    const response = await fetch("https://jheysonjhairprob.ccontrolz.com/api/user/aptitudes");
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
