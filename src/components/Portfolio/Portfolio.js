@@ -17,7 +17,9 @@ function Portfolio() {
       try {
         const data = await getUsersBriefcase();
         setProyectos(data);
-      } catch (error) {}
+      } catch (error) {
+        console.error("Error al obtener datos:", error);
+      }
     };
 
     fetchData();
@@ -37,18 +39,13 @@ function Portfolio() {
     setModalVisible(false);
   };
 
-  const proyectosFiltrados =
-    categoriaSeleccionada === "todos"
-      ? proyectos
-      : proyectos.filter(
-          (proyecto) =>
-            proyecto.tipo ===
-            (categoriaSeleccionada === "web"
-              ? 1
-              : categoriaSeleccionada === "escritorio"
-              ? 2
-              : 3)
-        );
+  const proyectosFiltrados = categoriaSeleccionada === "todos"
+    ? proyectos
+    : proyectos.filter(proyecto => proyecto.tipo ===
+      (categoriaSeleccionada === "web" ? 1 :
+        categoriaSeleccionada === "escritorio" ? 2 : 3)
+    );
+
   return (
     <>
       <section className="w" id="portafolios">
@@ -58,42 +55,18 @@ function Portfolio() {
 
           <div className="botones-work">
             <ul>
-              <li
-                className={`filter ${
-                  categoriaSeleccionada === "todos" ? "active" : ""
-                }`}
-                onClick={() => filtrarCategoria("todos")}
-                data-nombre="todos"
-              >
-                Todos
-              </li>
-              <li
-                className={`filter ${
-                  categoriaSeleccionada === "web" ? "active" : ""
-                }`}
-                onClick={() => filtrarCategoria("web")}
-                data-nombre="web"
-              >
-                Web
-              </li>
-              <li
-                className={`filter ${
-                  categoriaSeleccionada === "escritorio" ? "active" : ""
-                }`}
-                onClick={() => filtrarCategoria("escritorio")}
-                data-nombre="escritorio"
-              >
-                Escritorio
-              </li>
-              <li
-                className={`filter ${
-                  categoriaSeleccionada === "android" ? "active" : ""
-                }`}
-                onClick={() => filtrarCategoria("android")}
-                data-nombre="android"
-              >
-                Android
-              </li>
+              {['todos', 'web', 'escritorio', 'android'].map(categoria => (
+                <li
+                  key={categoria}
+                  className={`filter ${
+                    categoriaSeleccionada === categoria ? "active" : ""
+                  }`}
+                  onClick={() => filtrarCategoria(categoria)}
+                  data-nombre={categoria}
+                >
+                  {categoria.charAt(0).toUpperCase() + categoria.slice(1)}
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -101,25 +74,13 @@ function Portfolio() {
             {proyectosFiltrados.map((proyecto, index) => (
               <div
                 key={index}
-                className={`cont-work ${
-                  proyecto.tipo === 1
-                    ? "web"
-                    : proyecto.tipo === 2
-                    ? "escritorio"
-                    : "android"
-                }`}
+                className={`cont-work ${proyecto.tipo === 1 ? "web" : proyecto.tipo === 2 ? "escritorio" : "android"}`}
                 onClick={() => openModal(proyecto)}
               >
                 <div className="img-work">
-                  {proyecto.tipo === 1 && (
-                    <img src={Web} alt={proyecto.proyecto} />
-                  )}
-                  {proyecto.tipo === 2 && (
-                    <img src={Escritorio} alt={proyecto.proyecto} />
-                  )}
-                  {proyecto.tipo === 3 && (
-                    <img src={Android} alt={proyecto.proyecto} />
-                  )}
+                  {proyecto.tipo === 1 && <img src={Web} alt={proyecto.proyecto} />}
+                  {proyecto.tipo === 2 && <img src={Escritorio} alt={proyecto.proyecto} />}
+                  {proyecto.tipo === 3 && <img src={Android} alt={proyecto.proyecto} />}
                   <div className="img-caption">{proyecto.proyecto}</div>
                 </div>
                 <div className="textos-work">

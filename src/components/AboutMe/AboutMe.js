@@ -9,8 +9,10 @@ function AboutMe() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const userDataResponse = await getUserData();
-        const userInterestsResponse = await getUserInterests();
+        const [userDataResponse, userInterestsResponse] = await Promise.all([
+          getUserData(),
+          getUserInterests(),
+        ]);
 
         if (userDataResponse) {
           setUserData(userDataResponse);
@@ -26,11 +28,12 @@ function AboutMe() {
 
     fetchData();
   }, []);
+
   const handleDownloadCV = async (userId) => {
     try {
       const cvBlob = await downloadCV(userId);
+      const cvUrl = URL.createObjectURL(cvBlob);
 
-      const cvUrl = window.URL.createObjectURL(cvBlob);
       const link = document.createElement("a");
       link.href = cvUrl;
       link.setAttribute("download", "Currículum_JheysonJhairAroneAngeles.pdf");
@@ -47,7 +50,7 @@ function AboutMe() {
       <div className="contenido-seccion">
         <h2>Sobre Mí</h2>
         <p className="t2">
-          <span>Hola! soy {userData.username} Arone Angeles </span>
+          <span>Hola! Soy {userData.username} Arone Angeles </span>
           {userData.sobreMi}
         </p>
 
@@ -56,34 +59,30 @@ function AboutMe() {
             <h3>Datos Personales</h3>
             <ul>
               <li>
-                <i className="fa-solid fa-envelope"></i>
-                <strong>Email</strong>
+                <i className="fa-solid fa-envelope" alt="Icono de correo electrónico"></i>
+                <strong>Email:</strong>
                 {userData.email}
               </li>
               <li>
-                <i className="fa-solid fa-phone"></i>
-                <strong>Teléfono</strong>
+                <i className="fa-solid fa-phone" alt="Icono de teléfono"></i>
+                <strong>Teléfono:</strong>
                 +51 {userData.telefono}
               </li>
               <li>
-                <i className="fa-solid fa-globe"></i>
-                <strong>WebSite</strong>
-                <a
-                  href={userData.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <i className="fa-solid fa-globe" alt="Icono de sitio web"></i>
+                <strong>WebSite:</strong>
+                <a href={userData.website} target="_blank" rel="noopener noreferrer" alt="Visitar mi sitio web">
                   jheysonjhairpro.ccontrolz.com
                 </a>
               </li>
               <li>
-                <i className="fa-solid fa-location-dot"></i>
-                <strong>Dirección</strong>
+                <i className="fa-solid fa-location-dot" alt="Icono de ubicación"></i>
+                <strong>Dirección:</strong>
                 {userData.direccion}
               </li>
               <li>
-                <i className="fa-solid fa-user-tie"></i>
-                <strong>Cargo</strong>
+                <i className="fa-solid fa-user-tie" alt="Icono de cargo"></i>
+                <strong>Cargo:</strong>
                 <span>{userData.cargo}</span>
               </li>
             </ul>
@@ -93,19 +92,16 @@ function AboutMe() {
             <div className="contenedor-intereses">
               {userInterests.map((interest, index) => (
                 <div className="interes" key={index}>
-                  <i className={`${interest.icono}`}></i>
+                  <i className={`${interest.icono}`} alt={`Icono de interés: ${interest.nombre}`}></i>
                   <span>{interest.nombre.toUpperCase()}</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
-        <button
-          className="des"
-          onClick={() => handleDownloadCV(userData.idUser)}
-        >
+        <button className="des" onClick={() => handleDownloadCV(userData.idUser)}>
           Descargar CV
-          <i className="fa-solid fa-download"></i>
+          <i className="fa-solid fa-download" alt="Icono de descarga"></i>
           <span className="overlay"></span>
         </button>
 

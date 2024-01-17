@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import './Skills.css';
 import { getUserSkills } from "../../services/user";
@@ -15,33 +14,30 @@ function Skills() {
     }
   };
 
-const efectoHabilidades = () => {
-  const skills = document.getElementById("skills");
-  const distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
+  const handleSkillEffect = () => {
+    const skillsSection = document.getElementById("skills");
+    const distanceToSkills = window.innerHeight - skillsSection.getBoundingClientRect().top;
 
-  if (distancia_skills >= 300) {
-    const habilidades = document.getElementsByClassName("progreso");
+    if (distanceToSkills >= 300) {
+      const skillsElements = document.getElementsByClassName("progreso");
 
-    userSkills.forEach((habilidad, index) => {
-      habilidad.nombre &&
-        habilidad.porcentaje &&
-        habilidades[index].classList.add(
-          'progreso',
-          habilidad.nombre.toLowerCase().replace(/\s/g, ''),
-        );
-
-      habilidades[index].style.setProperty('--porcentaje', `${habilidad.porcentaje}%`);
-    });
-  }
-};
+      userSkills.forEach((skill, index) => {
+        if (skill.nombre && skill.porcentaje) {
+          skillsElements[index].classList.add(
+            'progreso',
+            skill.nombre.toLowerCase().replace(/\s/g, ''),
+          );
+          skillsElements[index].style.setProperty('--porcentaje', `${skill.porcentaje}%`);
+        }
+      });
+    }
+  };
 
   useEffect(() => {
-    window.onscroll = () => {
-      efectoHabilidades();
-    };
+    window.addEventListener('scroll', handleSkillEffect);
 
     return () => {
-      window.onscroll = null;
+      window.removeEventListener('scroll', handleSkillEffect);
     };
   }, [userSkills]);
 
@@ -56,13 +52,13 @@ const efectoHabilidades = () => {
         <div className="fila">
           <div className="col">
             <h3>Técnicas</h3>
-            {userSkills.map((habilidad, index) => (
-              habilidad.tipo === 1 && (
+            {userSkills.map((skill, index) => (
+              skill.tipo === 1 && (
                 <div key={index} className="skill">
-                  <span>{habilidad.nombre}</span>
+                  <span>{skill.nombre}</span>
                   <div className="barra-skill">
                     <div className="progreso">
-                      <span>{habilidad.porcentaje}%</span>
+                      <span>{skill.porcentaje}%</span>
                     </div>
                   </div>
                 </div>
@@ -71,13 +67,13 @@ const efectoHabilidades = () => {
           </div>
           <div className="col">
             <h3>Profesionales</h3>
-            {userSkills.map((habilidad, index) => (
-              habilidad.tipo === 2 && (
+            {userSkills.map((skill, index) => (
+              skill.tipo === 2 && (
                 <div key={index} className="skill">
-                  <span>{habilidad.nombre}</span>
+                  <span>{skill.nombre}</span>
                   <div className="barra-skill">
                     <div className="progreso">
-                      <span>{habilidad.porcentaje}%</span>
+                      <span>{skill.porcentaje}%</span>
                     </div>
                   </div>
                 </div>

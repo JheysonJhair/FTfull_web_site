@@ -66,7 +66,7 @@ function Home() {
     try {
       const cvBlob = await downloadCV(userId);
 
-      const cvUrl = window.URL.createObjectURL(cvBlob);
+      const cvUrl = URL.createObjectURL(cvBlob);
       const link = document.createElement("a");
       link.href = cvUrl;
       link.setAttribute("download", "Currículum_JheysonJhairAroneAngeles.pdf");
@@ -87,7 +87,7 @@ function Home() {
         <div className="divv col-12 xl:col-6">
           <div className="message__bubble triangle mb-4 md:mb-2">
             <div className="message__text">
-              <p>Hola, Yo soy</p>
+              <p>Hola, yo soy</p>
             </div>
           </div>
           <div className="es">
@@ -106,6 +106,7 @@ function Home() {
             <button
               className="des"
               onClick={() => handleDownloadCV(userData.idUser)}
+              aria-label="Descargar Currículum Vitae"
             >
               Descargar CV
             </button>
@@ -114,7 +115,7 @@ function Home() {
               aria-label="Deslizar a sección portafolio para mostrar mis trabajos"
               className="mess cursor-pointer"
             >
-              Mi trabajo
+              Mi Trabajo
             </button>
           </div>
         </div>

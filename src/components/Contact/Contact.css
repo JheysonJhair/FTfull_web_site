@@ -98,3 +98,15 @@
   display: inline-block;
   margin-right: 20px;
 }
+/* Otros estilos existentes */
+
+.confirmation-message {
+  color: #1cb698;
+  background-color: #d4edda; /* Color de fondo verde más claro de bootstrap */
+  border-radius: 3px;
+  padding: 10px;
+  margin: 10px;
+  font-family: "Righteous";
+}
+
+/* Otros estilos existentes */

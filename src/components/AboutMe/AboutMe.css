@@ -33,8 +33,8 @@
 }
 /*span color*/
 .sobremi .contenido-seccion p span {
-  color: #1cb698;
-  font-weight: bold;
+  color: #1cb698; 
+  font-size: bolder;
 }
 /*fila*/
 .sobremi .fila {
