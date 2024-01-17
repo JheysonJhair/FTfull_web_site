@@ -58,7 +58,7 @@ export const getUserSkills = async () => {
 
 export const getUsersBriefcase = async () => {
 try {
-  const response = await fetch('https://jheysonjhairprob.ccontrolz.com/api/briefcase');
+  const response = await fetch('https://jheysonjhairprob.ccontrolz.com/api/user/briefcase');
   const data = await response.json();
   return data;
 } catch (error) {
