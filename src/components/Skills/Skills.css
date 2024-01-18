@@ -41,6 +41,7 @@
     display: block;
     margin-bottom: 10px;
     font-size: 18px;
+    width: 200px;
     color: #f2f2f2e3;
   }
   /*barra*/
@@ -95,3 +96,26 @@
   }
 }
 
+
+@media screen and (max-width: 1000px) {
+
+  .skills .fila .col .barra-skill {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .skills .fila {
+    display: block;
+  }
+
+  .skills .fila .col .barra-skill {
+    width: 220%;
+  }
+
+}
+@media screen and (max-width: 500px) {
+.col h3{
+  font-size: 34px !important;
+}
+}

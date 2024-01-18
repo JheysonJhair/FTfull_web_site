@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Header.css";
 import Logo from "../../assets/webp/Logo.webp";
-import "../responsive.css";
 
 function Header() {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -89,12 +88,12 @@ function Header() {
             </li>
           </ul>
         </nav>
-        <div className="hireMe__button pt-4">
+        <div className="hireMe__button">
           <a
             href="mailto:jhair2003unamba.com"
             aria-label="Enviar mensaje al correo"
             id="typing-link"
-            className="aa cursor-pointer no-underline text-xl xl:text-sm hover-scale-effect"
+            className="aa "
           >
             Contrátame
           </a>

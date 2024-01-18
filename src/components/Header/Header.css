@@ -146,3 +146,122 @@ header {
   text-align: center; 
   padding: 10px; 
 }
+@media screen and (max-width: 1400px) {
+  nav {
+    display: none;
+  }
+  .nav-responsive {
+    display: block;
+  }
+  nav.responsive {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 75px;
+    background-color: #252a2e;
+    width: 180px;
+  }
+  nav.responsive ul {
+    display: block !important;
+  }
+  nav.responsive ul li {
+    border-bottom: 1px solid #fff;
+    padding: 10px 0;
+  }
+  .logo,
+  .logo img {
+    height: 80px;
+  }   .contenedor-nav {
+    width: 100%;
+  }
+  nav .enlaces a {
+    font-size: 20px;
+  }
+  .nav-responsive {
+    display: block;
+  }
+  nav.responsive {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 75px;
+    background-color: #252a2e;
+    width: 180px;
+  }
+  nav.responsive ul {
+    display: block !important;
+  }
+  nav.responsive ul li {
+    border-bottom: 1px solid #fff;
+    padding: 10px 0;
+  }
+  .hireMe__button {
+    margin-left: 500px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .logo,
+  .logo img {
+    height: 70px;
+  }
+  .hireMe__button {
+    margin-left: 300px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .contenedor-header header {
+    width: 100%;
+  }
+  .hireMe__button {
+    margin-left: 200px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .logo,
+  .logo img {
+    height: 50px;
+  }
+  .hireMe__button {
+    margin-left: 100px;
+  }
+  .enlaces a {
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+  }
+  .textos > h1 {
+    font-size: 70px;
+  }
+  .textos > h2 {
+    font-size: 35px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .hireMe__button {
+    margin-left: 10px;
+  }
+  .contenedor-header header {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .hireMe__button a {
+    padding: 0.5rem 1rem;
+    border-radius: 7px;
+  }
+  .textos > h1 {
+    font-size: 70px;
+  }
+  .textos > h2 {
+    font-size: 28px;
+  }
+  .aa {
+    margin-right: 10px;
+  }
+}

@@ -69,3 +69,28 @@
   .imagen-port:hover .hover-galeria {
     transform: scale(1);
   }
+  @media screen and (max-width: 1000px) {
+    .portfolio .galeria {
+      display: block;
+      width: 100%;
+    }
+    .portfolio .galeria .proyecto {
+      max-width: 100%;
+    }
+    .portfolio .galeria .proyecto img {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .imagen-port {
+      width: 44%;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .imagen-port {
+      width: 95%;
+    }
+    .galery p{
+      font-size: 17px;
+    }
+  }

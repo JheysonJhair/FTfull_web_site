@@ -110,3 +110,18 @@
 }
 
 /* Otros estilos existentes */
+@media screen and (max-width: 1000px) {
+.contacto .fila {
+  display: block;
+}
+.contacto .fila .col {
+  width: 100%;
+}
+}
+@media screen and (max-width: 500px) {
+  .contacto .col .info {
+    top: 48%;
+    left: 15%;
+    transform: translate(-2%, -48%);
+  }
+}

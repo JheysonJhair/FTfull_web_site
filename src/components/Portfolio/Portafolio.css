@@ -173,6 +173,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
+  text-align: center;
 }
 
 .buttons-container a {
@@ -263,4 +264,52 @@
 .descripcion p {
   margin: 0;
   padding: 0;
+}
+@media screen and (max-width: 900px) {
+  .cont-work {
+    width: 48%;
+    height: 290;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 700px) {
+.modal-content {
+  width: 95%;
+}
+.modal-overlay h2 {
+  font-size: 25px;
+}
+}
+@media screen and (max-width: 500px) {
+  .cont-work {
+    width: 100%;
+    height: 290;
+    margin-bottom: 10px;
+  }
+  .img-work img {
+    height: 100%;
+    width: 100%;
+    filter: brightness(0.7) blur(2px);
+    transition: filter 0.3s;
+    object-fit: cover;
+}
+  .w p{
+    font-size: 17px;
+  }
+  .modal-images img {
+    width: 90%;
+    max-width: none;
+    margin-top: 10px;
+    background-size: cover;
+    background-position: center center;
+  }
+  .modal-t {
+    font-size: 20px;
+  }
+
+  .modal-enlaces {
+    display: flex;
+    height: 30%;
+  }
+
 }

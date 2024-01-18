@@ -98,7 +98,7 @@
   height: 100px;
   background-color: #252a2e;
   border-radius: 10px;
-  margin: 0 15px 15px 0;
+  margin: 0px 12px 12px 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -145,4 +145,28 @@
 }
 .sobremi button:hover .overlay {
   width: 100%;
+}
+@media screen and (max-width: 1000px) {
+  .sobremi .fila {
+    display: block;
+  }
+  .sobremi .fila .col {
+    width: fit-content;
+  }
+  .skills .fila .col {
+    width: 100%;
+  }
+  
+}
+
+@media screen and (max-width: 700px) {
+  .sobremi .fila .col .contenedor-intereses {
+    width: 100%;
+}
+
+}
+@media screen and (max-width: 500px) {
+  .sobremi .fila .col ul li strong {
+    width: 95px;
+  }
 }

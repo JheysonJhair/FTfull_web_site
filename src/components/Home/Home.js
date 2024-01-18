@@ -79,10 +79,10 @@ function Home() {
   };
 
   return (
-    <div className="left__content container">
+    <div className=" container">
       <section
         id="inicio"
-        className="div_2 home__page flex align-items-center justify-content-center xl:justify-content-between grid grid-nogutter gap-4"
+        className="div_2"
       >
         <div className="divv col-12 xl:col-6">
           <div className="message__bubble triangle mb-4 md:mb-2">
@@ -92,7 +92,7 @@ function Home() {
           </div>
           <div className="es">
             <div className="column-container">
-              <h1 className="h11 text-3xl sm:text-5xl md:text-7xl">
+              <h1 className="h11">
                 Mr. {userData.username || "Jheyson Jhair"}
               </h1>
               <p id="typing-text" className="txt p1">
