@@ -98,8 +98,8 @@ function Contact() {
             <div className="info">
               <ul>
                 <li><i className="fa-solid fa-location-dot"></i>{userData.direccion}</li>
-                <li><i className="fa-solid fa-mobile-screen"></i>Llámame: +51 {userData.telefono}</li>
-                <li><i className="fa-solid fa-envelope"></i>Email: {userData.email}</li>
+                <li><i className="fa-solid fa-mobile-screen"></i>+51 {userData.telefono}</li>
+                <li><i className="fa-solid fa-envelope"></i> {userData.email}</li>
               </ul>
             </div>
           </div>
